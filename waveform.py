@@ -26,7 +26,8 @@ class Waveform(object):
         self.psd = self.get_psd()
 
     def get_psd(self):
-        return self.spectrogram.mean(axis=0)
+        z = np.ma.masked_where(self.spectrogram < 1e-3, self.spectrogram)
+        return z.mean(axis=0)
 
     @property
     def duration(self):

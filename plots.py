@@ -97,6 +97,8 @@ class SpectrogramWidget(SliderFigureWidget):
         y = y[y_mask]
         z = z[y_mask, :][:, x_mask]
 
+        z = np.ma.masked_where(z < 1e-3, z)
+
         self.figure_canvas.axes.imshow(flipud(z), interpolation='nearest', aspect='auto',
                                        extent=(x[0], x[-1], y[0], y[-1]),
                                        cmap='jet', norm=matplotlib.colors.LogNorm())
