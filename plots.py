@@ -98,12 +98,10 @@ class SpectrogramWidget(SliderFigureWidget):
         z = z[y_mask, :][:, x_mask]
 
         self.figure_canvas.axes.imshow(flipud(z), interpolation='nearest', aspect='auto',
-                         extent=(x[0], x[-1], y[0], y[-1]),
-                         cmap='jet', norm=matplotlib.colors.LogNorm())
+                                       extent=(x[0], x[-1], y[0], y[-1]),
+                                       cmap='jet', norm=matplotlib.colors.LogNorm())
 
     def redraw(self):
-
-        print('SpectrogramWidget: redraw self.bandwidth = %s......' % self.bandwidth)
 
         spectrogram_f = self.waveform.spectrogram
 
@@ -132,4 +130,3 @@ class PowerSpectralDensityWidget(FigureCanvasWidget):
 
         self.axes.set_xlabel(r'Frequency $f$, kHz')
         self.axes.set_ylabel(r'Magnitude, dB')
-

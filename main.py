@@ -73,7 +73,7 @@ class MainWindow(QMainWindow):
         self.show()
 
         # DEBUG:
-        self._open_waveform('/home/eugene/Development/playground/csexamples/waveforms/ERMES IQ.wav')
+        # self._open_waveform('/home/eugene/Development/playground/csexamples/waveforms/ERMES IQ.wav')
 
     def load_waveform(self):
 
